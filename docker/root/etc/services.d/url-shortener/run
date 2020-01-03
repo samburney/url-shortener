@@ -1,0 +1,9 @@
+#!/usr/bin/with-contenv bash
+
+# Start url-shortener
+cd /app
+
+export DANGEROUSLY_DISABLE_HOST_CHECK=true
+
+exec \
+    yarn start

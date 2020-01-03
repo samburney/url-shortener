@@ -1,0 +1,8 @@
+#!/usr/bin/with-contenv bash
+
+# backend
+sed -i -e "s#\"host\": \"localhost\",#\"host\": \"${MONGODB_HOST}\",#" /app/packages/backend/src/config/app.json
+sed -i -e "s#\"port\": \"27017\"#\"port\": \"${MONGODB_PORT}\"#" /app/packages/backend/src/config/app.json
+
+# frontend
+sed -i -e "s#\"baseURL\":.*#\"baseURL\": \"${APP_BASEURL}\"#" /app/packages/frontend/src/config/app.json
